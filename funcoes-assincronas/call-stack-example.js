@@ -6,7 +6,7 @@ queueMicrotask(() => {
   console.log(2);
 });
 
-//
+// Independente do tempo do setTimeout() ele vai rodar após as promisses e todo o resto porquê ele é uma macroTask que tem a prioridade menor.
 setTimeout(() => {
   console.log(3);
 }),
