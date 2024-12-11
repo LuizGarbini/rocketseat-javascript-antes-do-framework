@@ -18,19 +18,27 @@ function asyncFunction() {
   });
 }
 
-// Aqui no caso passamos esse console.log para disparar essa mensagem no console para demonstrar que como passamos um Timeout de 3 segundos ele vai esperar 3 segundos para rodar a função e enquanto isso dispara o console.log
-console.log('Executando função assincrona');
+// Aqui no caso eu to esperando uma promisse que demora 3 segundos para me retornar um valor, então na função abaixo eu estou utilizando uma função assíncrona que dentro dela consigo passar um await no const fazendo com que a função espere o tempo necessário para pegar a resposta da promisse acima.
 
-asyncFunction()
-  // O .then() recebe o parametro response que é a reposta caso a função de tudo certo
-  .then((response) => {
-    console.log('Sucesso:', response);
-  })
-  // Aqui no catch caso de algum exception ou erro ele dispara o console.log com o erro
-  .catch((error) => {
-    console.log('Error:', error);
-  })
-  // Aqui no finally ele vai rodar independente se a função deu certo ou errado, no caso aqui finalizamos a Promisse()
-  .finally(() => {
-    console.log('Fim da execução');
-  });
+async function fetch() {
+  // Abaixo eu criei um try catch para tratar o sucesso ou erro e também adicionando o finally só para demonstrar o Fim da execução da função.
+
+  try {
+    const response = await asyncFunction();
+    console.log('Sucesso', response);
+  } catch {
+    console.log('Erro', error);
+  } finally {
+    console.log('Fim da execução!');
+  }
+}
+
+/*
+Exemplo de async numa arrow function
+const fetch = async () => {
+  const response = await asyncFunction();
+  console.log(response);
+};
+*/
+
+fetch();
