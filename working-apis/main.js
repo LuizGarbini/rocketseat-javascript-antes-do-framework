@@ -1,6 +1,13 @@
-// Criando um Fetch para alterar partes do objeto do json da API
-fetch('http://localhost:3333/products')
-  // Adicionando o Then para me retornar o valor da promisse
-  .then((response) => response.json())
-  // Adicionamos outro .then para que eu consiga retornar os valores do response.json acima pois como ele também é assincrono ai me traria apenas uma promisse, mas desse jeito abaixo funciona
-  .then((data) => console.log(data));
+// Utilizando o Fetch com o .then()
+// fetch('http://localhost:3333/products')
+//   .then((response) => response.json())
+//   .then((data) => console.log(data));
+
+// Utilizando o fetch com async/await
+async function fetchProducts() {
+  const response = await fetch('http://localhost:3333/products');
+  const data = await response.json();
+  console.log(data);
+}
+
+fetchProducts();
