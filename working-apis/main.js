@@ -10,4 +10,12 @@ async function fetchProducts() {
   console.log(data);
 }
 
-fetchProducts();
+// Abaixo estamos criando uma função assyncrona que pega o resultado do json baseado no id do produto com uma variavel
+async function fetchProductById(id) {
+  const response = await fetch(`http://localhost:3333/products/${id}`);
+  const data = await response.json();
+  console.log(data);
+}
+
+// fetchProducts();
+fetchProductById(1);
