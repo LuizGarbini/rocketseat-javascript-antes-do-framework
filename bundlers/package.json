@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "dev": "webpack serve"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
@@ -10,6 +11,7 @@
     "html-webpack-plugin": "^5.6.3",
     "style-loader": "^4.0.0",
     "webpack": "^5.97.1",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.2.0"
   }
 }
